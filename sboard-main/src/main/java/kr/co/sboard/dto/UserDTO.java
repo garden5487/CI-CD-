@@ -10,12 +10,11 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Builder
 public class UserDTO {
-
     private String uid;
     private String pass;
     private String name;

@@ -9,28 +9,26 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.swing.text.html.Option;
-
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 @SpringBootTest
 class ArticleRepositoryTest {
 
     @Autowired
     private ArticleRepository articleRepository;
-
     @Autowired
     private ArticleService articleService;
 
-    @Transactional
     @DisplayName("관계 설정 테스트")
+    @Transactional
     @Test
     public void test1(){
 
         // given
-        int no = 10;
+        int no = 3;
 
         // when
         Article article = articleRepository.findById(no).get();
@@ -43,7 +41,9 @@ class ArticleRepositoryTest {
     @Test
     @Transactional
     public void test2(){
-        ArticleDTO articleDTO = articleService.findById(10);
+        ArticleDTO articleDTO = articleService.findById(8);
         System.out.println(articleDTO);
+
     }
+
 }

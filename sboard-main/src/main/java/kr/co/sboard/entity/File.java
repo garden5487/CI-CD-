@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
 @Builder
-@Table( name = "File")
+@Entity
+@Table(name = "File")
 public class File {
 
     @Id
@@ -27,5 +27,4 @@ public class File {
 
     @CreationTimestamp
     private LocalDateTime rdate;
-
 }

@@ -1,7 +1,6 @@
 package kr.co.sboard.service;
 
 import jakarta.mail.Message;
-import jakarta.mail.Session;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,7 +31,6 @@ public class UserService {
     private final HttpServletRequest request;
 
     public void register(UserDTO userDTO){
-
         // 비밀번호 암호화
         String encodedPass = passwordEncoder.encode(userDTO.getPass());
         userDTO.setPass(encodedPass);
@@ -42,36 +40,37 @@ public class UserService {
 
         // 저장
         userRepository.save(user);
-
     }
 
     public long checkUser(String type, String value){
 
         long count = 0;
+
         if(type.equals("uid")){
             count = userRepository.countByUid(value);
         }else if(type.equals("nick")){
             count = userRepository.countByNick(value);
         }else if(type.equals("email")){
             count = userRepository.countByEmail(value);
-            if(count == 0){
-                int code = sendEmailCode(value);
 
-                // 인증코드 비교를 하기 위해 세션 저장
+            if(count == 0){
+                String code = sendEmailCode(value);
+
+                // 인증코드 비교를 하기 위해서 세션 저장
                 HttpSession session = request.getSession();
                 session.setAttribute("authCode", code);
             }
+
         }else if(type.equals("hp")){
             count = userRepository.countByHp(value);
         }
-
         return count;
     }
 
+
     @Value("${spring.mail.username}")
     private String sender;
-
-    public int sendEmailCode(String receiver){
+    public String sendEmailCode(String receiver){
 
         // MimeMessage 생성
         MimeMessage message = mailSender.createMimeMessage();
@@ -83,25 +82,18 @@ public class UserService {
         String subject = "sboard 인증코드 안내";
         String content = "<h1>sboard 인증코드는 " + code + "입니다.</h1>";
 
-        /*
-        * Sender : application.yml의 값
-        * @Value("${spring.email.username}")
-        * */
-
-        try{
+        try {
+            // 메일 정보 설정
             message.setFrom(new InternetAddress(sender, "보내는 사람", "UTF-8"));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
-
-            // title
             message.setSubject(subject);
             message.setContent(content, "text/html;charset=UTF-8");
 
             // 메일 발송
             mailSender.send(message);
-        }catch(Exception e){
+        }catch (Exception e){
             log.error(e.getMessage());
         }
-
-        return code;
+        return String.valueOf(code);
     }
 }

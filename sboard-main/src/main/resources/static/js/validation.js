@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         // 아이디 중복 체크
-        fetch(`/user/uid/{value}`)
+        fetch(`/user/uid/${value}`)
             .then(response => response.json())
             .then((data)=>{
                 console.log(data);
@@ -175,20 +175,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
         // JSON 데이터 생성
         const jsonData = {
-          "authCode" : value
+            "authCode": value
         };
 
         // 서버 전송
         const response = await fetch('/user/email/auth', {
             method: 'POST',
-            headers : {'Content-Type' : 'application/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(jsonData)
         });
 
         const data = await response.json();
         console.log(data);
 
-        if(data.result > 0){
+        if(data){
             emailResult.innerText = '이메일이 인증 되었습니다.';
             emailResult.style.color = 'green';
             isEmailOk = true;
@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // 최종 폼 전송 이벤트
     formRegister.onsubmit = function(e){
+        console.log("form submit!!!")
 
         // 1) 아이디 유효성 검사 결과
         if(!isUidOk){
@@ -251,12 +252,12 @@ document.addEventListener('DOMContentLoaded', function(){
         if(!isNickOk){
             return false;
         }
-/*
+
         // 5) 이메일 유효성 검사 결과
         if(!isEmailOk){
             return false;
         }
-*/
+
         // 6) 휴대폰 유효성 검사 결과
         if(!isHpOk){
             return false;

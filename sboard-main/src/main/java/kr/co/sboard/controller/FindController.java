@@ -12,7 +12,7 @@ public class FindController {
     }
 
     @GetMapping("/find/password")
-    public String password(){
+    public String Password(){
         return "/find/password";
     }
 
@@ -25,6 +25,4 @@ public class FindController {
     public String userId(){
         return "/find/userId";
     }
-
-
 }

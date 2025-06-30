@@ -1,6 +1,5 @@
 package kr.co.sboard.security;
 
-
 import kr.co.sboard.entity.User;
 import lombok.Builder;
 import lombok.Data;

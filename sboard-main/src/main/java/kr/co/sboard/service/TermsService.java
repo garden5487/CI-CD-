@@ -23,15 +23,10 @@ public class TermsService {
         if(optTerms.isPresent()){
             Terms terms = optTerms.get();
 
-            // modelmapper을 이용한 변환
+            // modelmapper를 이용한 변환
             TermsDTO termsDTO = modelMapper.map(terms, TermsDTO.class);
             return termsDTO;
         }
-
         return null;
-    }
-
-    public void privacy(){
-
     }
 }

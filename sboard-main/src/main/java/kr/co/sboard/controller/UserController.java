@@ -2,12 +2,14 @@ package kr.co.sboard.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import kr.co.sboard.config.AppInfo;
 import kr.co.sboard.dto.TermsDTO;
 import kr.co.sboard.dto.UserDTO;
 import kr.co.sboard.service.TermsService;
 import kr.co.sboard.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,25 +18,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-@Controller
 @RequiredArgsConstructor
-public class UserController   {
+@Controller
+public class UserController {
 
     private final TermsService termsService;
     private final UserService userService;
 
     @GetMapping("/user/info")
-    public String info(Model model){
+    public String info(){
         return "/user/info";
     }
 
     @GetMapping("/user/login")
     public String login(){
+
+
+
+
         return "/user/login";
     }
 
@@ -51,6 +56,8 @@ public class UserController   {
 
         // 서비스 호출
         userService.register(userDTO);
+
+        // 리다이렉트
         return "redirect:/user/login";
     }
 
@@ -59,39 +66,40 @@ public class UserController   {
 
         TermsDTO termsDTO = termsService.terms();
         model.addAttribute(termsDTO);
+
         return "/user/terms";
     }
 
+
     @GetMapping("/user/{type}/{value}")
     public ResponseEntity user(@PathVariable("type") String type, @PathVariable("value") String value){
+        log.info("type : " + type + ", value : " + value);
 
         // 서비스 호출
         long count = userService.checkUser(type, value);
-        
-        log.info("type: {}, value: {}", type, value);
-        Map<String , Long > resultMap = new HashMap<>();
+
+        // JSON 생성
+        Map<String, Long> resultMap = new HashMap<>();
         resultMap.put("count", count);
 
+        // JSON 반환
         return ResponseEntity.ok().body(resultMap);
     }
 
-    @PostMapping("/user/email/auth")
-    public ResponseEntity<Boolean> emailCodeAuth(@RequestBody Map<String, String> map, HttpSession session){
-        // JSON 단일 문자열값이 직접 String으로 매핑되지 않기 때문에 JSON과 호환되는 Map 타입으로 JSON 수신
 
+    @PostMapping("/user/email/auth")
+    public ResponseEntity<Boolean> emailAuth(@RequestBody Map<String,String> map, HttpSession session){ // JSON 단일 문자열값이 직접 String으로 매핑되지 않기 때문에 JSON과 호환되는 Map 타입으로 JSON 수신
 
         String authCode = map.get("authCode");
-        log.info("authCode: {}", map.get("authCode"));
+        log.info("authCode : {}", authCode);
 
-        String sessAuthCode = String.valueOf((Integer) session.getAttribute("authCode"));
-        log.info("sessAuthCode: {}", sessAuthCode);
+        String sessAuthCode = (String) session.getAttribute("authCode");
+        log.info("sessAuthCode : {}", sessAuthCode);
 
         if(authCode.equals(sessAuthCode)){
             return ResponseEntity.ok().body(true);
         }
-
         return ResponseEntity.ok().body(false);
-
     }
 
 
