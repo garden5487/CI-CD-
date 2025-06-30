@@ -1,0 +1,19 @@
+<div class="pagination">
+  <button th:if="${pagination.getCurrentPage() > 10}">
+    <a th:href="@{/article(category=${category},page=${pagination.getCurrentPage() - 10})}">
+      << </a>
+  </button>
+  <button class="prev" th:if="${pagination.getCurrentPage() > 1}">
+    <a th:href="@{/article(category='news', page=${pagination.getCurrentPage() - 1})}"> < </a>
+  </button>
+  <button
+      th:each="num: ${#numbers.sequence(pagination.getCurrentPage(), pagination.endPage())}">
+    <a th:href="@{/article(category=${category}, page=${num})}"> [[${num}]]</a>
+  </button>
+  <button class="next" th:if="${pagination.endPage() > 1}">
+    <a th:href="@{/article(category='news', page=${pagination.getCurrentPage() + 1})}"> > </a>
+  </button>
+  <button th:if="${pagination.endPage() > 10}">
+    <a th:href="@{/article(category='news', page=${pagination.getCurrentPage() + 10})}">>></a>
+  </button>
+</div>

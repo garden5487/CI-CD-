@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/font/NotoSansKR-Light.otf") format("otf"),
+    url("/font/NotoSansKR-Light.woff") format("woff"),
+    url("/font/NotoSansKR-Light.woff2") format("woff2"),
+    url("/font/NotoSansKR-Medium.otf") format("otf"),
+    url("/font/NotoSansKR-Medium.woff") format("woff"),
+    url("/font/NotoSansKR-Medium.woff2") format("woff2"),
+    url("/font/NotoSansKR-Regular.otf") format("otf"),
+    url("/font/NotoSansKR-Regular.woff") format("woff"),
+    url("/font/NotoSansKR-Regular.woff2") format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: normal 12px "Noto Sans KR";
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.header_Top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 27px;
+  background: #3f97f6;
+}
+
+.header_Top_Menu {
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 260px;
+  height: 27px;
+}
+
+.header_Top_Menu a {
+  color: #ffffff;
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.header_Top_Menu span {
+  color: #ffffff;
+  text-align: center;
+}
+
+.header_Top > div {
+  width: 1200px;
+  height: 27px;
+}
+
+.header_Bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 77px;
+}
+
+.header_Bottom > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 77px;
+}
+
+.header_logo {
+  display: flex;
+  width: 196px;
+  height: 50px;
+  background-image: url("/images/header_logo.png");
+}
+
+
+.header_Bottom_Menu {
+
+  justify-content: space-between;
+  align-items: center;
+  float: right;
+  width: 100%;
+  max-width: 702px;
+  height: 100%;
+}
+
+
+
+
+.header_Bottom_Menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header_Bottom_Menu > ul > li {
+  display: inline-block;
+  position: relative;
+}
+
+.header_Bottom_Menu a {
+  text-align: center;
+  display: block;
+  padding: 28px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  transition: background-color 0.3s;
+}
+
+.header_Bottom_Menu > ul > li > ul a{
+  background-color: #3F97F6;
+  color: white;
+  padding: 20px 25px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+.header_Bottom_Menu > ul > li >ul a:hover {
+  background-color: #555;
+}
+
+
+.header_Bottom_Menu li:hover .submenu {
+  display: block;
+
+}
+
+.submenu li {
+  display: block;
+  
+}
+
+.submenu a{
+  text-align: inherit;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1조 - 그린대학교</title>
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+  <link rel="stylesheet" th:href="@{/css/common/header.css}"/>
+  <link rel="stylesheet" th:href="@{/css/common/footer.css}"/>
+  <script src="https://kit.fontawesome.com/516da99189.js" crossorigin="anonymous"></script>
+  <script src="/js/main/slide.js"></script>
+</head>
+<body>
+<th:block th:include="/common/html/header.html"/>
+<main>
+  <div class="main_background">
+    <div>
+      <p>IT기술로 세상을 변화시키는 인재를 양성</p>
+      <p>그린대학교 컴퓨터과학과</p>
+      <p>급변하는 컴퓨터 기술의 발전에 선도적으로 참여하고 컴퓨터의 활용을 통해 미래를 만들어 나갈 수 있는 인력을 배양</p>
+      <div>
+        <a href="#">학과소개 바로가기 ></a>
+      </div>
+      <div id="circle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <!--슬라이드 화살표-->
+      <a class="arrow">
+        <img src="/images/bg-path-arrow.png" alt="Next Slide">
+      </a>
+    </div>
+
+
+  </div>
+
+
+  <div class="main_article">
+    <div class="Academic_Information">
+      <div>
+        <div>
+          <p>
+            학사안내
+            <a th:href="@{/academicInformation/notice}">
+              <img th:src="@{/images/bg-viewmore01.png}" alt="학사안내 더보기">
+            </a>
+          </p>
+
+        </div>
+        <div>
+          <a href="#">교과목 폐지 및 신설 안내<span style="float: right;">2023-03-01</span></a>
+          <a href="#">2019-2학기 진로 취업 프로그램 설계를 위한 학생대상<span
+              style="float: right;">2023-03-01</span></a>
+          <a href="#">제8회 KNDA 학술논문상 공모<span style="float: right;">2023-03-01</span></a>
+          <a href="#">[진로취업특강] 유망직무 전무가 초청 특강<span style="float: right;">2023-03-01</span></a>
+          <a href="#">대학 진로 취업지원 현황 조사 안내<span style="float: right;">2023-03-01</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="Academic_Announcement">
+      <div>
+        <div>
+          <p>
+            공지사항
+            <a th:href="@{/enterInformation/advice}">
+              <img th:src="@{/images/bg-viewmore02.png}" alt="공지사항 더보기">
+            </a>
+          </p>
+
+        </div>
+        <div>
+          <a href="#">교과목 폐지 및 신설 안내<span style="float: right;">2023-03-01</span></a>
+          <a href="#">2019-2학기 진로 취업 프로그램 설계를 위한 학생대상<span
+              style="float: right;">2023-03-01</span></a>
+          <a href="#">제8회 KNDA 학술논문상 공모<span style="float: right;">2023-03-01</span></a>
+          <a href="#">[진로취업특강] 유망직무 전무가 초청 특강<span style="float: right;">2023-03-01</span></a>
+          <a href="#">대학 진로 취업지원 현황 조사 안내<span style="float: right;">2023-03-01</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main_photo_gallery">
+    <p>PHOTO GALLERY</p>
+    <div class="gallery-items">
+      <div>
+        <div>
+          <p>글로벌 명문대학 그린대학교</p>
+        </div>
+        <div>
+          <p>글로벌 명문대학 그린대학교</p>
+        </div>
+        <div>
+          <p>글로벌 명문대학 그린대학교</p>
+        </div>
+        <div>
+          <p>글로벌 명문대학 그린대학교</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main_club_helper">
+    <div>
+      <div>
+        <p>동아리 HELPER</p>
+        <p>
+          공무원 시험 준비반을 운용함으로써 정치행정학과에서 공무원 시험을 준비하는 학생들에게<br>
+          인터넷 강의, 교재를 제공하고 스터디 그룹의 활동을 도와주고 있습니다.
+        </p>
+      </div>
+
+      <a th:href="@{/collegeLife/club}">자세히보기</a>
+
+    </div>
+  </div>
+
+  <div class="main_news_link">
+    <div>
+      <div class="news_column">
+        <div>
+          <div>
+            <p>
+              뉴스 및 칼럼
+              <a th:href="@{/article(category=news)}">
+                <img th:src="@{/images/bg-viewmore01.png}" alt="공지사항 더보기">
+              </a>
+            </p>
+
+          </div>
+          <div>
+            <a href="#">교과목 폐지 및 신설 안내<span style="float: right;">2023-03-01</span></a>
+            <a href="#">2019-2학기 진로 취업 프로그램 설계를 위한 학생대상<span style="float: right;">2023-03-01</span></a>
+            <a href="#">제8회 KNDA 학술논문상 공모<span style="float: right;">2023-03-01</span></a>
+            <a href="#">[진로취업특강] 유망직무 전무가 초청 특강<span style="float: right;">2023-03-01</span></a>
+            <a href="#">대학 진로 취업지원 현황 조사 안내<span style="float: right;">2023-03-01</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="smart_Link">
+        <div>
+          <div>
+            <p>SMART LINK</p>
+          </div>
+          <div>
+            <a th:href="@{/enterInformation/advice}">
+              <div>
+                <img th:src="@{/images/bg-main-link01.png}" alt="">
+              </div>
+              <div>입학안내</div>
+            </a>
+            <a th:href="@{/academicInformation/schedule}">
+              <div>
+                <img th:src="@{/images/bg-main-link02.png}" alt="">
+              </div>
+              <div>학사일정</div>
+            </a>
+            <a th:href="@{/collegeLife/council}">
+              <div>
+                <img th:src="@{/images/bg-main-link03.png}" alt="">
+              </div>
+              <div>학생회</div>
+            </a>
+            <a th:href="@{/support/curriculum}">
+              <div>
+                <img th:src="@{/images/bg-main-link04.png}" alt="">
+              </div>
+              <div>교과과정</div>
+            </a>
+            <a th:href="@{/article(category=employment)}">
+              <div>
+                <img th:src="@{/images/bg-main-link05.png}" alt="">
+              </div>
+              <div>취업안내</div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+
+<th:block th:include="/common/html/footer.html"/>
+
+</body>
+</html>

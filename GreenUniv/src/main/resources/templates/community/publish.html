@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title th:text="글쓰기"></title>
+  <link rel="stylesheet" href="/css/common/header.css"/>
+  <link rel="stylesheet" href="/css/common/nav.css"/>
+  <link rel="stylesheet" href="/css/common/side-menu.css"/>
+  <link rel="stylesheet" href="/css/common/footer.css"/>
+  <link rel="stylesheet" href="/css/community/view.css"/>
+</head>
+<body>
+<div id="wrapper">
+  <th:block th:include="/common/html/header.html"/>
+  <main id="container">
+    <aside id="side-menu">
+      <div class="title-area">
+        <h1>커뮤니티</h1>
+      </div>
+      <a th:href="@{/article(category=notice)}" class="menu">공지사항</a>
+      <a th:href="@{/article(category=news)}" class="menu">뉴스 및 칼럼</a>
+      <a th:href="@{/article(category=employment)}" class="menu">취업정보</a>
+      <a th:href="@{/article(category=bulletin)}" class="menu">자유게시판</a>
+      <a th:href="@{/article/qna}" class="menu">질문과답변</a>
+      <a th:href="@{/article(category=resources)}" class="menu">자료실</a>
+    </aside>
+    <section>
+      <form th:action="@{/article/publish}" method="post">
+        <table>
+          <tbody>
+          <tr>
+            <th>
+              제목
+            </th>
+            <td>
+              <input name="title" class="title fake-block" type="text"/>
+            </td>
+          </tr>
+          <tr th:if="${category.equals('news') || category.equals('column')}">
+            <select name="category">
+              <option value="news">뉴스</option>
+              <option value="column">컬럼</option>
+            </select>
+          </tr>
+          <tr th:if="${!category.equals('news') && !category.equals('column')}">
+            <select name="category" style="display: none">
+              <option th:value="${category}"></option>
+            </select>
+          </tr>
+          <tr>
+            <th>작성자</th>
+            <td class="author">
+              <input name="user" readonly class="fake-block" type="text"
+                     th:value="${currentUser.getName()}"/>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div id="content-area">
+          <textarea class="content" name="content"></textarea>
+        </div>
+        <div id="button-area"
+             th:if="${currentUser != null}">
+          <input type="submit" value="등록" class="btn modify-btn"/>
+        </div>
+      </form>
+    </section>
+  </main>
+  <th:block th:include="/common/html/footer.html"/>
+</div>
+</body>
+</html>

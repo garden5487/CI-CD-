@@ -1,0 +1,77 @@
+<!--
+    작성자: garden(박정원)
+    설명 : 로그인 > 약관
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공지사항</title>
+    <link rel="stylesheet" href="/css/common/header.css" />
+    <link rel="stylesheet" href="/css/common/footer.css" />
+    <link rel="stylesheet" href="/css/common/nav.css" />
+    <link rel="stylesheet" href="/css/common/table.css" />
+    <link rel="stylesheet" href="/css/common/pagination.css" />
+    <link rel="stylesheet" href="/css/common/side-menu.css" />
+    <link rel="stylesheet" href="/css/login/clause.css" />
+    <link rel="stylesheet" href="/css/login/terms.css">
+    <script src="/js/login/terms.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <th:block th:include="/common/html/header.html"/>
+      <nav>
+        <div>
+          <div>
+            <a href="/">
+              <img src="/images/ico-home.png" alt="홈페이지" />
+              &ensp;&ensp;
+            </a>
+            <a href="">&ensp;&ensp;커뮤니티&ensp;&ensp;</a>
+            <a href="">&ensp;&ensp;공지사항</a>
+          </div>
+        </div>
+      </nav>
+      <main id="container">
+        <div class="log">
+          <div class="log_head">
+              <p>약관안내<br></p>
+              <p>※대학구성원(학생,교직원)은 회원가입 없이 학번,교번(사번) 아이디를 사용하여 로그인할 수 있습니다<br>
+                 ※만 14세 미만 아동의 경우 홈페이지 회원가입에 제한이 있습니다.</p>
+          </div>
+          <div class="log_main">
+            <table class="box">
+              <tr>
+                <td class="title">이용약관</td>
+                <td class="content">
+                  <textarea id="terms" readonly class="fixed-box">[[${term.content}]]</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td class="title">개인정보 수집안내</td>
+                <td class="content">
+                  <textarea id="privacy" readonly class="fixed-box">[[${privacy.content}]]</textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+            <div class="main_bottom">
+              <div class="bar">
+                <input type="checkbox" id="check" name="check"/> 위 홈페이지 이용에 따른 회원강비 약관 및
+                개인정보 수집·이용에 모두 동의합니다.
+              </div>
+              <div class="btn">
+                <a th:href="@{/login/register}" id="btnNext" class="btnNext">다음</a>
+              </div>
+            </div>
+          <div>
+
+          </div>
+      </main>
+      <th:block th:include="/common/html/footer.html"/>
+    </div>
+    <script src="/js/community/request.js"></script>
+    <script src="/js/community/animation.js"></script>
+  </body>
+</html>

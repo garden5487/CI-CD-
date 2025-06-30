@@ -1,0 +1,209 @@
+/*메인*/
+#container{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+/*left_sectin*/
+#container > .left_section > aside {
+    float: left;
+    width: 180px;
+    height: auto;
+    margin-right: 40px;
+  }
+  
+  .title-area {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-bottom: 2px solid #111;
+    padding: 10px;
+  }
+  
+  .title-area > h1 {
+    font-size: 26px;
+    font-weight: bolder;
+  }
+  
+  #container > .left_section> aside > a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0px 10px;
+    line-height: 50px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  #container > .left_section > aside > a:hover {
+    background-color: #3f97ef;
+    color: #fff;
+  }
+  
+  /*right_section*/
+  .right_section{
+    width: 990px;
+    height: 507px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .right_section > article > div:nth-child(1){
+    
+    width: 930px;
+    height: auto;
+    margin-top: 15px;
+    border-bottom: 2px solid #111;
+    padding: 10px 0;
+  }
+  .right_section > article > div:nth-child(1) >h3{
+    font-size: 26px;
+    font-weight: bolder;
+  }
+  .right_section > article > div:nth-child(2){
+    width: auto;
+    height: 40px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+  }
+
+.right_section > article > div:nth-child(2)> .search_first{
+    width: auto;
+    height: 40px;
+    display: inline-block;
+    
+}
+.right_section > article > div:nth-child(2)> form >fieldset{
+    display: flex; 
+    align-items: center; 
+}
+.right_section > article > div:nth-child(2)> form >fieldset>a{
+    margin-right: 5px;
+    width: 150px;
+
+}
+
+.right_section > article > div:nth-child(2)> form >fieldset>input{
+    width: 230px;
+    height: 34px;
+    margin-right: 5px;
+    border: 1px solid #DEDEDE;
+}
+.right_section > article > div:nth-child(2)> form> fieldset>.btn_submit{
+    width: 70px;
+    height: 34px;
+    background-color: #3f97f6;
+    color: white;
+}
+
+/*table*/
+.right_section > article > div:nth-child(3)>table {
+    width: 930px;
+    height: 237px;
+    position: absolute;
+    top: 135px;
+    right: 0;
+    border-collapse: collapse;
+    border-top: 2px solid #000000;
+    
+}
+.right_section > article > div:nth-child(3) >table > thead{
+    width: 930px;
+    height: 60px;
+    border-bottom: 1px solid #a3a3a3;
+    
+}
+.right_section > article > div:nth-child(3) > table > thead >tr >.table_num{
+    width: 79px;
+    height: 60px;
+    border-bottom: 1px #a3a3a3;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.right_section > article > div:nth-child(3) > table > thead >tr >.table_title{
+    width: 490px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.right_section > article > div:nth-child(3) > table > thead >tr >.table_writer{
+    width: 170px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.right_section > article > div:nth-child(3) > table > thead >tr >.table_day{
+    width: 119px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.right_section > article > div:nth-child(3) > table > thead >tr >.table_select{
+    width: 70px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.right_section > article > div:nth-child(3) > table > tbody > tr{
+
+    border-bottom: 1px solid #a3a3a3;
+}
+.right_section > article > div:nth-child(3) > table > tbody > tr > .table_content{
+    width: 346px;
+    height: 18px;
+    font-size: 16px;
+    
+}
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+  position: relative;
+  top: 310px;
+}
+
+.pagination > button {
+  margin: 0 5px; /* 좌우 여백 */
+  width: 35px;
+  height: 35px;
+  border: 1px solid #dedede;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #888;
+  
+  display: flex; /* 텍스트를 중앙 정렬 */
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination > button:hover {
+  background-color: #3f97f6;
+  color: white;
+  border: 1px solid #3f97f6;
+}
+
+.pagination > .prev {
+  margin-right: 20px;
+}
+
+.pagination > .next {
+  margin-left: 15px;
+}
+

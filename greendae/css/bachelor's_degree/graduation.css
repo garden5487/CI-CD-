@@ -1,0 +1,375 @@
+html,body{
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 최소 높이를 화면 높이(뷰포트 높이)로 설정 */
+}
+
+#container {
+  flex: 1; /* 메인이 차오르면 푸터가 밀려남 */
+}
+
+/*메인*/
+#container{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+/*left_sectin*/
+#container > .left_section > aside {
+    float: left;
+    width: 180px;
+    height: auto;
+    margin-right: 40px;
+  }
+  
+  .title-area {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-bottom: 2px solid #111;
+    padding: 10px;
+  }
+  
+  .title-area > h1 {
+    font-size: 26px;
+    font-weight: bolder;
+  }
+  
+  #container > .left_section> aside > a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0px 10px;
+    line-height: 50px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  #container > .left_section > aside > a:hover {
+    background-color: #3f97ef;
+    color: #fff;
+  }
+  .right_section > article > div:nth-child(1){
+    width: 960px;
+    height: 50px;
+    float: right;
+    margin-top: 30px;
+    
+     
+  }
+
+  .right_section > article > div:nth-child(1) > h3{
+    font-weight: bolder;
+    font-size: 20px;
+    border-bottom: 2px solid #222222;
+    
+  }
+
+  .right_section > article > div:nth-child(2){
+    width: 930px;
+    height: 370px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .right_section > article > div:nth-child(2)>h5{
+    font-size: 18px;
+    color: #145074;
+    line-height: 100%;
+  }
+
+  .right_section > article > div:nth-child(2)>table{
+    margin-top: 8px;
+    width: 930px;
+    height: 368px;
+    border-collapse: collapse;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-top: 2px solid #071f4b;
+  }
+
+  .right_section > article > div:nth-child(2)>table>thead{
+    width: 926px;
+    height: 102px;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    
+  }
+  
+  .right_section > article > div:nth-child(2)>table>thead>tr>.gu{
+    width: 277px;
+    height: 102px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #f4f8fc;
+  }
+
+  .right_section > article > div:nth-child(2)>table>thead>tr>.get_score{
+    width: 91px;
+    height: 102px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #f4f8fc;
+  }
+  .right_section > article > div:nth-child(2)>table>thead>tr>.gradu_score{
+    width: 555px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #f4f8fc;
+  }
+
+  .right_section > article > div:nth-child(2)>table>thead>tr>.common_gradu{
+    width: 137px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #f4f8fc;
+  }
+  
+  .right_section > article> div:nth-child(2)>table>tbody{
+    width: 926px;
+    height: 258px;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+  }
+  .right_section > article> div:nth-child(2)>table>tbody>tr>th{
+    font-size: 16px;
+    height: 50px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+  }
+  .right_section > article> div:nth-child(2)>p{
+    height: 24px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    color: #666666;
+  }
+
+  .right_section > article > div:nth-child(3){
+    width: 930px;
+    height: 260px;
+    float: right;
+    margin-right: 27px;
+    margin-top: 100px; 
+  }
+
+  .right_section > article > div:nth-child(3)>h5{
+    font-size: 18px;
+    color: #145074;
+    line-height: 100%;
+  }
+
+  .right_section > article > div:nth-child(3)>table{
+    width: 930px;
+    height: 210px;
+    margin-top: 8px;
+    border-collapse: collapse;
+    border-top: 2px solid #071f4b;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+
+  }
+  .right_section > article > div:nth-child(3)>table>thead{
+    width: 926px;
+    height: 102px;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+  }
+
+  .right_section > article > div:nth-child(3)>table>thead>tr>.th_1{
+    width: 648px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #f4f8fc;
+  }
+  .right_section > article > div:nth-child(3)>table>thead>tr>.th_2{
+    width: 276px;
+    height: 102px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #f4f8fc;
+  }
+
+  .right_section > article > div:nth-child(3)>table>thead>tr>.th_3{
+    width: 276px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #f4f8fc;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(3)>table>thead>tr>.th_4{
+    width: 184px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #f4f8fc;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(3)>table>thead>tr>.th_5{
+    width: 184px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #f4f8fc;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(3)>table>tbody{
+    width: 926px;
+    height: 98px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    
+  }
+
+  .right_section > article > div:nth-child(3)>table>tbody>tr>.td_1{
+    width: 276px;
+    height: 98px;
+    font-size: 16px;
+  }
+  .right_section > article > div:nth-child(3)>table>tbody>tr>.td_2{
+    width: 184px;
+    height: 98px;
+    font-size: 16px;
+  }
+
+  .right_section > article > div:nth-child(3)>table>tbody>tr>.td_3{
+    width: 184px;
+    height: 98px;
+    font-size: 16px;
+  }
+
+  .right_section > article > div:nth-child(3)>table>tbody>tr>.td_4{
+    width: 276px;
+    height: 98px;
+    font-size: 16px;
+  }
+
+  .right_section > article > div:nth-child(3)>p{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    color: #666666;
+    margin-top: 5px;
+  }
+
+
+  .right_section > article > div:nth-child(4){
+    width: 930px;
+    height: 660px;
+    float: right;
+    margin-right: 26px;
+    margin-top: 50px;
+  }
+
+  .right_section > article > div:nth-child(4)>h5{
+    font-size: 18px;
+    color: #145074;
+    line-height: 100%;
+  }
+  
+  .right_section > article > div:nth-child(4)>table{
+    margin-top: 5px;
+    border-top: 2px solid #071f4b;
+    width: 930px;
+    height: 392px;
+    border-collapse: collapse;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead{
+    
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead>tr>.th_6{
+    width: 276px;
+    height: 126px;
+    font-size: 16px;
+    background-color: #f4f8fc;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead>tr>.th_7{
+    width: 137px;
+    height: 126px;
+    font-size: 16px;
+    background-color: #f4f8fc;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead>tr>.th_8{
+    width: 507px;
+    height: 50px;
+    background-color: #f4f8fc;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead>tr>.th_9{
+    width: 137px;
+    height: 74px;
+    background-color: #f4f8fc;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead>tr>.th_10{
+    width: 137px;
+    height: 74px;
+    font-size: 16px;
+    background-color: #f4f8fc;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(4)>table>thead>tr>.th_11{
+    width: 229px;
+    height: 74px;
+    background-color: #f4f8fc;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+
+  .right_section > article > div:nth-child(4)>table>tbody{
+    width: 926px;
+    height: 258px;
+  }
+
+  .right_section > article > div:nth-child(4)>table>tbody>tr>td{
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    line-height: 24px;
+  }
+
+  .right_section > article> div:nth-child(4)>p{
+    width: 380px;
+    margin-top: 15px;
+    color: #666666;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+  }

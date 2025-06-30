@@ -1,0 +1,94 @@
+
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url('/font/NotoSansKR-Light.otf') format('otf'),
+        url('/font/NotoSansKR-Light.woff') format('woff'),
+        url('/font/NotoSansKR-Light.woff2') format('woff2'),
+        url('/font/NotoSansKR-Medium.otf') format('otf'),
+        url('/font/NotoSansKR-Medium.woff') format('woff'),
+        url('/font/NotoSansKR-Medium.woff2') format('woff2'),
+        url('/font/NotoSansKR-Regular.otf') format('otf'),
+        url('/font/NotoSansKR-Regular.woff') format('woff'),
+        url('/font/NotoSansKR-Regular.woff2') format('woff2')
+}
+
+main {
+    width: auto;
+    height: auto; 
+    padding-top: 80px;   
+}
+
+main .log {
+    width: 90%;
+    height: auto; 
+    margin : 0 auto;
+    box-sizing: border-box;
+}
+
+.log_head > p {    
+
+    color:#3f97f6; 
+}
+
+.log_head > p:nth-child(1) {
+    font-size: x-large;    
+    font-weight: 600;
+    color:#3f97f6; 
+}
+
+.log_head > p:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+.log_head ul{
+    float: left;
+}
+
+.log_head a{
+    position: relative;
+    left: 270px;
+}
+
+.box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+   
+}
+
+.log_main .tr {
+     
+    padding: 10px;
+    vertical-align: top; 
+}
+
+.title {
+    width: 20%;
+    background-color: #f0f4f8; 
+    font-weight: bold;
+    text-align: left;
+}
+
+.log_main .content {
+    width: 100%;
+    display: flex;  
+}
+
+.fixed-box {
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    overflow: auto; 
+    white-space: pre-wrap;
+    margin-left: 8px; 
+    margin-right: 8px;
+}
+.bar {
+margin-top: -40px;
+}
+
+.click{
+    float: right;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenuniv.greenuniv.dao.mapper.RegistryMapper">
+  <resultMap id="registryMap" type="com.greenuniv.greenuniv.dto.registry.RegistryDTO">
+    <result property="currentYear" column="current_year"/>
+    <result property="registerDate" column="registerDate"/>
+    <collection property="student" ofType="com.greenuniv.greenuniv.dto.student.StudentDTO">
+      <id property="studentNumber" column="student_number"/>
+    </collection>
+    <collection property="registryLecture"
+      resultMap="com.greenuniv.greenuniv.dao.mapper.RegistryLectureMapper.allRegistryLectureMap"/>
+  </resultMap>
+  <select id="selectAll" resultMap="registryMap">
+    SELECT
+    `reg`.`student_number` AS `student_number`,
+    `lec_info`.id AS `lecture_code`,
+    `lec_info`.`name` AS `lecture_name`,
+    `lec_info`.`level` AS `lecture_level`,
+    `user`.`name` AS `professor_name`,
+    `lec_info`.credit AS `lecture_credit`,
+    `lec_info`.classification AS `lecture_classification`,
+    `lec_d`.`day` AS `lecture_day`,
+    `lec_t`.start_at AS `lecture_start_at`,
+    `lec_t`.end_at AS `lecture_end_at`,
+    `lec_info`.classroom AS `lecture_classroom`,
+    `reg`.`current_year` AS `current_year`,
+    `reg`.`register_date` AS `register_date`
+    FROM `registry` AS `reg`
+    JOIN `registry_lecture` AS `reg_lec`
+    ON `reg`.id = `reg_lec`.id
+    JOIN `lecture` AS `lec`
+    ON `reg_lec`.id = `lec`.id
+    JOIN `lecture_info` AS `lec_info`
+    ON `lec`.id = `lec_info`.id
+    JOIN `lecture_day` AS `lec_d`
+    ON `lec`.lecture_day_id = `lec_d`.id
+    JOIN `lecture_time` AS `lec_t`
+    ON `lec`.lecture_time_id = `lec_t`.id
+    JOIN `professor` AS `prof`
+    ON `prof`.id = `lec_info`.professor_id
+    JOIN `user`
+    ON `prof`.user_id = `user`.id;
+  </select>
+
+  <select id="selectById" resultMap="registryMap">
+    SELECT
+    `reg`.`student_number` AS `student_number`,
+    `lec_info`.id AS `lecture_code`,
+    `lec_info`.`name` AS `lecture_name`,
+    `lec_info`.`level` AS `lecture_level`,
+    `user`.`name` AS `professor_name`,
+    `lec_info`.credit AS `lecture_credit`,
+    `lec_info`.classification AS `lecture_classification`,
+    `lec_d`.`day` AS `lecture_day`,
+    `lec_t`.start_at AS `lecture_start_at`,
+    `lec_t`.end_at AS `lecture_end_at`,
+    `lec_info`.classroom AS `lecture_classroom`,
+    `reg`.`current_year` AS `current_year`,
+    `reg`.`register_date` AS `register_date`
+    FROM `registry` AS `reg`
+    JOIN `registry_lecture` AS `reg_lec`
+    ON `reg`.id = `reg_lec`.id
+    JOIN `lecture` AS `lec`
+    ON `reg_lec`.id = `lec`.id
+    JOIN `lecture_info` AS `lec_info`
+    ON `lec`.id = `lec_info`.id
+    JOIN `lecture_day` AS `lec_d`
+    ON `lec`.lecture_day_id = `lec_d`.id
+    JOIN `lecture_time` AS `lec_t`
+    ON `lec`.lecture_time_id = `lec_t`.id
+    JOIN `professor` AS `prof`
+    ON `prof`.id = `lec_info`.professor_id
+    JOIN `user`
+    ON `prof`.user_id = `user`.id
+    WHERE `reg`.student_number = #{id};
+  </select>
+</mapper>

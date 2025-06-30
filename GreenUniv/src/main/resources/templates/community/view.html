@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title th:text="${article.getTitle()}"></title>
+  <link rel="stylesheet" href="/css/common/header.css"/>
+  <link rel="stylesheet" href="/css/common/nav.css"/>
+  <link rel="stylesheet" href="/css/common/side-menu.css"/>
+  <link rel="stylesheet" href="/css/common/footer.css"/>
+  <link rel="stylesheet" href="/css/community/view.css"/>
+</head>
+<body>
+<div id="wrapper">
+  <th:block th:include="/common/html/header.html"/>
+  <main id="container">
+    <aside id="side-menu">
+      <div class="title-area">
+        <h1>커뮤니티</h1>
+      </div>
+      <a th:href="@{/article(category=notice)}" class="menu">공지사항</a>
+      <a th:href="@{/article(category=news)}" class="menu">뉴스 및 칼럼</a>
+      <a th:href="@{/article(category=employment)}" class="menu">취업정보</a>
+      <a th:href="@{/article(category=bulletin)}" class="menu">자유게시판</a>
+      <a th:href="@{/article/qna}" class="menu">질문과답변</a>
+      <a th:href="@{/article(category=resources)}" class="menu">자료실</a>
+    </aside>
+    <section>
+      <span class="category" th:text="${article.getCategory()}" style="display:none"></span>
+      <table>
+        <tbody>
+        <tr>
+          <th>
+            제목
+          </th>
+          <td>
+            <input name="title" class="title fake-block"
+                   type="text"
+                   th:value="${article.getTitle()}"/>
+          </td>
+          <th>조회수</th>
+          <td class="view">
+            <input name="view" readonly class="fake-block" type="text"
+                   th:value="${article.getView()}"/>
+          </td>
+        </tr>
+        <tr>
+          <th>작성자</th>
+          <td class="author">
+            <input name="user" readonly class="fake-block" type="text"
+                   th:value="${article.getUser().getName()}"/>
+          </td>
+          <th>작성일</th>
+          <td class="register-date">
+            <input name="registerDate" readonly class="fake-block" type="text"
+                   th:value="${article.getRegisterDate()}"/>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div id="content-area">
+        <textarea class="content" readonly>[[${article.getContent()}]]</textarea>
+      </div>
+      <div id="button-area"
+           th:if="${currentUser != null && currentUser.getUsername().equals(article.getUser().getId())}">
+        <a type="button" th:text="수정" th:href="@{/article/modify(id=${article.getId()})}"
+           class="btn modify-btn"></a>
+        <a type="button" th:text="삭제"
+           th:href="@{/article/delete(category=${article.getCategory()},id=${article.getId()})}"
+           class="btn delete-btn"></a>
+      </div>
+
+      <!--댓글 영역-->
+      <table id="comment-area">
+        <tr class="comment" style="border-bottom: none">
+          <td th:if="${currentUser != null}">
+            <span class="comment-author">[[${currentUser.getUsername()}]]</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="editor">
+                <textarea
+                    name="content"
+                    class="comment-editor"
+                    placeholder="댓글 내용을 입력하세요."
+                ></textarea>
+            <a class="btn publish-btn comment-btn" href="/article/comment">
+              등록
+            </a>
+          </td>
+        </tr>
+        <tr class="comment" style="border-bottom: none" th:each="comment : ${comments}">
+          <td id="editor-area">
+            <span class="comment-author" th:text="${comment.getUser().getName()}"></span>
+            <span class="comment-date"
+                  th:text="${comment.getRegisterDate()}">2024-01-29 10:51:23</span>
+            <textarea
+                readonly
+                class="comment-editor comment-view"
+            >[[${comment.getContent()}]]</textarea>
+            <a class="btn delete-btn comment-btn" href="/article/comment" style="display: inline"
+               th:if="${currentUser != null && currentUser.getUsername().equals(article.getUser().getId())}">
+              삭제
+            </a>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <th:block th:include="/common/html/footer.html"/>
+</div>
+</body>
+</html>

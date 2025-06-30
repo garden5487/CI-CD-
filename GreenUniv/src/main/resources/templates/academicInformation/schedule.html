@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <link rel="stylesheet" href="/css/common/nav.css">
+    <link rel="stylesheet" href="/css/bachelor's_degree/schedule.css" />
+    <link rel="stylesheet" href="/css/common/side-menu.css">
+    <link rel="stylesheet" href="/css/bachelor's_degree/registration.css">
+    <title>학사일정</title>
+</head>
+<body>
+    <th:block th:include="/common/html/header.html"/>
+    <nav>
+        <div>
+          <div>
+            <a href="#">
+              <img src="/images/ico-home.png" alt="홈페이지" />
+              &ensp;&ensp;
+            </a>
+            <a href="">&ensp;&ensp;학사안내&ensp;&ensp;</a>
+            <a href="">&ensp;&ensp;학사일정</a>
+          </div>
+        </div>
+      </nav>
+
+    <main id="container">
+        <aside id="side-menu">
+            <div class="title-area">
+                <h1>대학·대학원</h1>
+            </div>
+            <a th:href="@{/academicInformation/notice}" class="menu">공지사항</a>
+            <a th:href="@{/academicInformation/schedule}" class="menu">학사일정</a>
+            <a th:href="@{/academicInformation/registration}" class="menu">수강신청</a>
+            <a th:href="@{/academicInformation/score}" class="menu">성적</a>
+            <a th:href="@{/academicInformation/graduation}" class="menu">수료 및 졸업</a>
+            <a th:href="@{/academicInformation/qna}" class="menu">자주묻는질문</a>
+        </aside>
+        <section>
+            <div class="title-area">
+                <h1>학사일정</h1>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button onclick="prevMonth()">❮</button>
+                    <span id="calendar-title" style="font-size: x-large; font-weight: 600; margin: 0 60px;">2025.03 123123</span>
+                    <button onclick="nextMonth()">❯</button>
+                </div>
+                <table class="calendar-table">
+                    <thead>
+                    <tr>
+                        <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th>
+                    </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                    </tbody>
+                </table>
+                <div class="import-note">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</div>
+            </div>
+        </section>
+        <div id="schedule-modal" class="modal">
+            <div class="modal-content" >
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>일정 등록</h2>
+                <input type="hidden" id="modal-date">
+                <input type="text" id="modal-title" placeholder="일정 제목">
+                <button onclick="saveSchedule()">저장</button>
+                <button id="delete-button" onclick="deleteSchedule()" style="display: none; background: red; color: white;">일정 삭제</button>
+            </div>
+        </div>
+
+
+    </main>
+    <th:block th:include="/common/html/footer.html"/>
+    <script src="/js/community/calendar.js"></script>
+</body>
+</html>

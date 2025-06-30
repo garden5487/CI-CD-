@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/humanResourceManager/studentList.css">
+    <link rel="stylesheet" href="/css/common/paginationManagement.css" />
+    <link rel="stylesheet" href="/css/common/header.css" />
+    <link rel="stylesheet" href="/css/common/footer.css" />
+</head>
+<body>
+<th:block th:include="/common/html/management/header.html"/>
+    <main id="container">
+        <div>
+            <th:block th:include="/common/html/management/aside.html"/>
+            <section>
+                <div class="title-area">
+                    <h1>학생 목록</h1>
+                    <h2>인사관리&ensp;&ensp;<span>>&ensp;&ensp;학생 목록</span></h2>
+                </div>
+                <form id="search-form" action="#">
+                    <div id="search-area">
+                      <select class="search-input">
+                        <option value="검색조건">검색조건</option>
+                      </select>
+                      <input
+                        type="search"
+                        name="keyword"
+                        class="search-box search-input"
+                      />
+                      <input
+                        type="submit"
+                        class="search-btn search-input"
+                        value="검색"
+                      />
+                    </div>
+                </form>
+                  <table>
+                    <tr>
+                      <th>학번</th>
+                      <th>이름</th>
+                      <th>주민번호</th>
+                      <th>휴대폰</th>
+                      <th>이메일</th>
+                      <th>학과</th>
+                      <th>학년</th>
+                      <th>학기</th>
+                      <th>상태</th>
+                    </tr>
+                    <tbody>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                      <tr>
+                        <td>202001230</td>
+                        <td>홍길동</td>
+                        <td>900103-1234567</td>
+                        <td>010-1234-1001</td>
+                        <td>hong1001@naver.com</td>
+                        <td>컴퓨터공학과</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>재학중</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="table_footer">
+                    <div class="pagination">
+                      <button>
+                        <a href="#"> << </a>
+                      </button>
+                      <button class="prev">
+                        <a href="#"> < </a>
+                      </button>
+                      <button>
+                        <a href="#"> 1 </a>
+                      </button>
+                      <button>
+                        <a href="#"> 2 </a>
+                      </button>
+                      <button>
+                        <a href="#"> 3 </a>
+                      </button>
+                      <button class="next">
+                        <a href="#"> > </a>
+                      </button>
+                      <button>
+                        <a href="#">>></a>
+                      </button>
+                    </div>
+                    <div class="btn_register">
+                      <button>
+                        <a href="#">등록</a>
+                      </button>
+                    </div>
+                  </div>
+
+            </section>
+        </div>
+    </main>
+<th:block th:include="/common/html/management/footer.html"/>
+</body>
+
+</html>

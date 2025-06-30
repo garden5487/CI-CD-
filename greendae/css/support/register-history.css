@@ -1,0 +1,16 @@
+/*
+    작성자: id3ntity99(이현민)
+    설명 : 학생지원 > 수강신청내역 페이지 CSS
+*/
+#container table tr td:nth-child(2) {
+  text-align: center;
+}
+
+#container table tr td .cancel-btn {
+  width: 35px;
+  height: 30px;
+  border: none;
+  background-color: #942626;
+  color: white;
+  cursor: pointer;
+}

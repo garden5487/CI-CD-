@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/static/font/NotoSansKR-Light.otf") format("otf"),
+    url("/static/font/NotoSansKR-Light.woff") format("woff"),
+    url("/static/font/NotoSansKR-Light.woff2") format("woff2"),
+    url("/static/font/NotoSansKR-Medium.otf") format("otf"),
+    url("/static/font/NotoSansKR-Medium.woff") format("woff"),
+    url("/static/font/NotoSansKR-Medium.woff2") format("woff2"),
+    url("/static/font/NotoSansKR-Regular.otf") format("otf"),
+    url("/static/font/NotoSansKR-Regular.woff") format("woff"),
+    url("/static/font/NotoSansKR-Regular.woff2") format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: normal 12px "Noto Sans KR";
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.header_Top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 27px;
+  background: #3f97f6;
+}
+
+.header_Top_Menu {
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 260px;
+  height: 27px;
+}
+
+
+
+.header_Top_Menu a {
+  color: #ffffff;
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.header_Top_Menu span {
+  color: #ffffff;
+  text-align: center;
+}
+
+.header_Top > div {
+  width: 1200px;
+  height: 27px;
+}
+
+.header_Bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 77px;
+}
+
+.header_Bottom > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 77px;
+}
+
+.header_logo {
+  display: flex;
+  width: 196px;
+  height: 50px;
+  background-image: url("/static/images/header_logo.png");
+}
+.header_Bottom_Menu {
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 660px;
+  height: 100%;
+  border: 3px solid black;
+}
+
+
+
+.header_Bottom_Menu a {
+  flex: 1 1 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  margin-right: 10px;
+}

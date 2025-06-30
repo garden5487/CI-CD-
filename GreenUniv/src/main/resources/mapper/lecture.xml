@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenuniv.greenuniv.dao.mapper.LectureMapper">
+  <resultMap id="lectureMap" type="com.greenuniv.greenuniv.dto.lecture.LectureDTO"
+    autoMapping="true">
+    <collection property="lectureInfo" ofType="com.greenuniv.greenuniv.dto.lecture.LectureInfoDTO">
+      <id property="id" column="lecture_code"/>
+      <result property="level" column="lecture_level"/>
+      <result property="classification" column="lec_classification"/>
+      <result property="name" column="lecture_name"/>
+      <result property="credit" column="lecture_credit"/>
+      <collection property="department"
+        ofType="com.greenuniv.greenuniv.dto.department.DepartmentDTO">
+        <result property="name" column="department_name"/>
+      </collection>
+      <collection property="professor" ofType="com.greenuniv.greenuniv.dto.professor.ProfessorDTO">
+        <association property="user" javaType="com.greenuniv.greenuniv.dto.user.UserDTO">
+          <result property="name" column="professor_name"/>
+        </association>
+      </collection>
+    </collection>
+    <collection property="lectureDay" ofType="com.greenuniv.greenuniv.dto.lecture.LectureDayDTO">
+      <result property="day" column="lecture_day"/>
+    </collection>
+    <collection property="lectureTime" ofType="com.greenuniv.greenuniv.dto.lecture.LectureTimeDTO">
+      <result property="startAt" column="lecture_starts"/>
+      <result property="endAt" column="lecture_ends"/>
+    </collection>
+  </resultMap>
+  <select id="selectById" resultMap="lectureMap">
+    SELECT
+    `lec`.id AS `lecture_code`,
+    `dept`.`name` AS `department_name`,
+    `lec_info`.`level` AS `lecture_level`,
+    `lec_info`.classification AS `lec_classification`,
+    `lec_info`.`name` AS `lecture_name`,
+    `user`.`name` AS `professor_name`,
+    `lec_info`.credit AS `lec_credit`,
+    `lec_d`.`day` AS `lecture_day`,
+    `lec_t`.start_at AS `lecture_starts`,
+    `lec_t`.end_at AS `lecture_ends`
+    FROM `lecture` AS `lec`
+    JOIN `lecture_info` AS `lec_info`
+    ON `lec`.id= `lec_info`.id
+    JOIN `professor` AS `prof`
+    ON `lec_info`.professor_id = `prof`.id
+    JOIN `user`
+    ON `prof`.user_id = `user`.id
+    JOIN `department` AS `dept`
+    ON `dept`.id = `lec_info`.department_id
+    JOIN `lecture_day` AS `lec_d`
+    ON `lec`.lecture_day_id = `lec_d`.id
+    JOIN `lecture_time` AS `lec_t`
+    ON `lec`.lecture_time_id = `lec_t`.id
+    WHERE `lec`.id = #{id}
+    GROUP BY `lec`.id;
+  </select>
+  <select id="selectAll" resultMap="lectureMap">
+    SELECT
+    `lec`.id AS `lecture_code`,
+    `dept`.`name` AS `department_name`,
+    `lec_info`.`level` AS `lecture_level`,
+    `lec_info`.classification AS `lec_classification`,
+    `lec_info`.`name` AS `lecture_name`,
+    `user`.`name` AS `professor_name`,
+    `lec_info`.credit AS `lec_credit`,
+    `lec_d`.`day` AS `lecture_day`,
+    `lec_t`.start_at AS `lecture_starts`,
+    `lec_t`.end_at AS `lecture_ends`
+    FROM `lecture` AS `lec`
+    JOIN `lecture_info` AS `lec_info`
+    ON `lec`.id= `lec_info`.id
+    JOIN `professor` AS `prof`
+    ON `lec_info`.professor_id = `prof`.id
+    JOIN `user`
+    ON `prof`.user_id = `user`.id
+    JOIN `department` AS `dept`
+    ON `dept`.id = `lec_info`.department_id
+    JOIN `lecture_day` AS `lec_d`
+    ON `lec`.lecture_day_id = `lec_d`.id
+    JOIN `lecture_time` AS `lec_t`
+    ON `lec`.lecture_time_id = `lec_t`.id
+    GROUP BY `lec`.id;
+  </select>
+
+  <insert id="insertLecture" parameterType="com.greenuniv.greenuniv.dto.lecture.LectureDTO">
+    INSERT INTO lecture (lecture_info_id)
+    VALUES (#{lectureInfo.id});
+  </insert>
+
+
+</mapper>

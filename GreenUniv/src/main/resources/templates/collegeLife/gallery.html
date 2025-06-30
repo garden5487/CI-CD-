@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <link rel="stylesheet" href="/css/common/nav.css">
+    <link rel="stylesheet" href="/css/college_life/gallery.css">
+    <link rel="stylesheet" href="/css/common/pagination.css">
+    
+    <title>갤러리</title>
+</head>
+<body>
+<th:block th:include="/common/html/header.html"/>
+    <nav>
+        <div>
+          <div>
+            <a href="#">
+              <img src="/images/ico-home.png" alt="홈페이지" />&ensp;&ensp;
+            </a>
+            <a href="">&ensp;&ensp;대학생활&ensp;&ensp;</a>
+            <a href="">&ensp;&ensp;갤러리</a>
+          </div>
+        </div>
+      </nav>
+    <main id="container">
+        <section class="left_section">
+            <aside id="side-menu">
+              <div class="title-area">
+                <h1>대학생활</h1>
+              </div>
+                <a th:href="@{/collegeLife/club}" class="menu">학생회 소개</a>
+                <a th:href="@{/collegeLife/council}" class="menu">동아리/스터디</a>
+                <a th:href="@{/collegeLife/diet}" class="menu">식단안내</a>
+                <a th:href="@{/collegeLife/gallery}" class="menu">갤러리</a>
+            </aside>
+        </section>
+
+        <section class="right_section">
+           <article>
+            <div>
+                <h3>갤러리</h3>
+            </div>
+            <div>
+                <ul> 
+                    <li>
+                        <div class="gallery_1">
+                            <p><img src="/images/gallary_sample1.jpg" alt="#"><a href="#"></a></p>
+                            <p class="p_text"><a href="#"><span>제40회 1995학년도 학위수여식</span></a></p>
+                            <p class="p_text1">
+                                <span>조회수 23</span>
+                                <em>|</em>
+                                <span>글로벌···</span>
+                                <em>|</em>
+                                <span>25.02.20</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_2">
+                            <p><img src="/images/gallary_sample2.jpg" alt="#"><a href=""></a></p>
+                            <p class="p_text"><a href="#"><span>제40회 1995학년도 학위수여식</span></a></p>
+                            <p class="p_text1">
+                                <span>조회수 23</span>
+                                <em>|</em>
+                                <span>글로벌···</span>
+                                <em>|</em>
+                                <span>25.02.20</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_3">
+                            <p><img src="/images/gallary_sample3.jpg" alt="#"><a href="#"></a></p>
+                            <p class="p_text"><a href="#"><span>제40회 1995학년도 학위수여식</span></a></p>
+                            <p class="p_text1">
+                                <span>조회수 23</span>
+                                <em>|</em>
+                                <span>글로벌···</span>
+                                <em>|</em>
+                                <span>25.02.20</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_4">
+                            <p><img src="/images/gallary_sample4.png" alt="#"><a href="#"></a></p>
+                            <p class="p_text"><a href="#"><span>제40회 1995학년도 학위수여식</span></a></p>
+                            <p class="p_text1">
+                                <span>조회수 23</span>
+                                <em>|</em>
+                                <span>글로벌···</span>
+                                <em>|</em>
+                                <span>25.02.20</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_5">
+                        <p><img src="/images/gallary_sample5.jpg" alt="#"><a href="#"></a></p>
+                        <p class="p_text"><a href="#"><span>제40회 1995학년도 학위수여식</span></a></p>
+                        <p class="p_text1">
+                            <span>조회수 23</span>
+                            <em>|</em>
+                            <span>글로벌···</span>
+                            <em>|</em>
+                            <span>25.02.20</span>
+                        </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="pagination" style="margin-left: 110px;">
+                <button>
+                  <a href="#"> << </a>
+                </button>
+                <button class="prev">
+                  <a href="#"> < </a>
+                </button>
+                <button>
+                  <a href="#"> 1 </a>
+                </button>
+                <button>
+                  <a href="#"> 2 </a>
+                </button>
+                <button>
+                  <a href="#"> 3 </a>
+                </button>
+                <button class="next">
+                  <a href="#"> > </a>
+                </button>
+                <button>
+                  <a href="#">>></a>
+                </button>
+              </div>
+           </article>
+        </section>    
+    </main>
+    <th:block th:include="/common/html/footer.html"/>
+</body>
+</html>

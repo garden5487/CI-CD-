@@ -1,0 +1,34 @@
+#container table td:nth-child(2) {
+  text-align: center;
+}
+
+#container table td:nth-child(3) {
+  text-align: left;
+}
+
+#container table td > .category {
+  width: 30px;
+  height: 20px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+#container table td a {
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#container table td > .news-category {
+  border: 1px solid #a0183a;
+  background-color: #a0183a;
+}
+
+#container table td > .column-category {
+  border: 1px solid #3282d3;
+  background-color: #3282d3;
+}

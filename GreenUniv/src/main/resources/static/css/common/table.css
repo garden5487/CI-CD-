@@ -1,0 +1,98 @@
+#container {
+  width: 1200px;
+  min-height: 677px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  
+
+  
+}
+
+#container > section {
+  float: left;
+  width: 930px;
+  height: auto;
+  margin-left: 50px;
+
+}
+
+#container > section > .title-area {
+  width: 930px;
+  height: auto;
+  margin-top: 15px;
+  border-bottom: 2px solid #111;
+  padding: 10px 0px;
+}
+
+#container > section > .title-area > h1 {
+  font-size: 26px;
+  font-weight: bolder;
+}
+
+#search-area {
+  float: right;
+  margin: 35px 0px;
+}
+
+#search-area > .search-input {
+  border-radius: 0;
+  border: 1px solid #dedede;
+}
+
+#search-area > select {
+  width: 150px;
+  height: 35px;
+  color: #666;
+  cursor: pointer;
+}
+
+#search-area > .search-box {
+  width: 200px;
+  height: 35px;
+}
+
+.search-btn {
+  width: 70px;
+  height: 35px;
+  background-color: #3f97ef;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#container table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  border-top: 2px solid #111;
+  margin-bottom: 50px;
+}
+
+#container table th {
+  padding: 20px 10px;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+#container table td {
+  text-align: center;
+  padding: 10px 0px;
+  
+}
+
+#container table tr {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+#container table td:nth-child(2) {
+  text-align: left;
+}
+
+#container table td > .category {
+  width: 30px;
+  height: 20px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  color: #fff;
+}

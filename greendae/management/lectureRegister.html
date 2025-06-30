@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/management/lectureRegister.css">
+    <link rel="stylesheet" href="/css/common/pagination.css" />
+    <link rel="stylesheet" href="/css/common/header.css" />
+    <link rel="stylesheet" href="/css/common/footer.css" />
+</head>
+<body>
+    <header>
+        <div class="header_Top">
+            <div>
+                <div class="header_Top_Menu">
+                    <a href="#">HOME</a>
+                    <span class="separator">|</span>
+                    <a href="#">사이트맵</a>
+                    <span class="separator">|</span>
+                    <a href="#">로그아웃</a>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div>
+                <a href="#">
+                    <img src="/images/admin_logo.png" alt="그린대학교 학사관리시스템">
+                </a>
+            </div>
+        </div>
+    </header>
+    <main id="container">
+        <div>
+            <aside>
+                <div>
+                    <div>
+                        <p><img src="/images/ico-admin-setting.png" class="aside_picture"> 환경설정</p>
+                        <a href="#">· 기본환경정보</a><br>
+                        <a href="#">· 약관관리</a><br>
+                    </div>
+                    <div>
+                        <p><img src="/images/ico-admin-academic.png" class="aside_picture"> 학사운영</p>
+                        <a href="#">· 교육 운영 현황</a><br>
+                        <a href="#">· 학년별 학생 현황</a><br>
+                        <a href="#">· 학과별 학생 현황</a><br>
+                        <a href="#">· 강의 목록</a><br>
+                        <a href="#">· 강의 등록</a><br>
+                        <a href="#">· 수강 현황</a><br>
+                    </div>
+                    <div>
+                        <p><img src="/images/ico-admin-persons.png" class="aside_picture"> 인사관리</p>
+                        <a href="#">· 학생 목록 및 등록</a><br>
+                        <a href="#">· 교수 목록 및 등록</a><br>
+                        <a href="#">· 임직원 목록 및 등록</a><br>
+                    </div>
+                    <div>
+                        <p><img src="/images/ico-admin-college.png" class="aside_picture"> 대학 및 학과</p>
+                        <a href="#">· 대학 및 학과 목록</a><br>
+                        <a href="#">· 대학 및 학과 등록</a><br>
+                    </div>
+                    <div>
+                        <p><img src="/images/ico-admin-board.png" class="aside_picture"> 게시판관리</p>
+                        <a href="#">· 입학안내 공지사항</a><br>
+                        <a href="#">· 학사안내 공지사항</a><br>
+                        <a href="#">· 커뮤니티 공지사항</a><br>
+                        <a href="#">· 입학상담</a><br>
+                        <a href="#">· 질문 및 답변</a><br>
+                        <a href="#">· 식단 안내</a><br>
+                        <a href="#">· 자료실</a><br>
+                    </div>
+                </div>
+            </aside>
+            <section>
+                <div class="title-area">
+                  <h1>강의 등록</h1>
+                  <h2>학사운영&ensp;&ensp;<span>>&ensp;&ensp;강의등록</span></h2>
+                </div>
+                <div>
+                  <p><img src="/images/bullet-h4.png" alt="#"> 기본정보 입력</p>
+                  <table class="Enter_basic_information">                        
+                    <tr>
+                      <td>과목코드</td>
+                      <td>학과 코드 + 연도 + 학기 + 순번 조합 자동생성</td>
+                      <td>개설학과</td>
+                      <td>
+                        <select>
+                          <option value="">인문사회대학</option>
+                        </select>
+                        <select name="" id="">
+                          <option value="">국어국문학과</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>개설학년</td>
+                      <td>
+                        <select name="" id="">
+                          <option value="">1학년</option>
+                        </select>
+                      </td>
+                      <td>학점</td>
+                      <td>
+                        <select name="" id="">
+                          <option value="">3학점</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>이수구분</td>
+                      <td>
+                        <select name="" id="">
+                          <option value="전공 선택">전공선택</option>
+                        </select>
+                      </td>
+                      <td>담당교수</td>
+                      <td>
+                        <input type="text">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>강의명</td>
+                      <td colspan="3">
+                        <input type="text" placeholder="강좌명 입력">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>강의 설명</td>
+                      <td colspan="3">
+                        <input type="text" placeholder="강의 개요 및 목표, 학습 내용 등">
+                      </td>
+                    </tr>
+                  </table>
+              </div>
+              <div>
+                <p><img src="/images/bullet-h4.png" alt="#"> 대학 운영 현황</p>
+                <table class="University_operation_status">                        
+                  <tr>
+                    <td>수업 기간</td>
+                    <td colspan="3">
+                      <input type="date">
+                      <span> ~ </span>
+                      <input type="date">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>수업 시간</td>
+                    <td colspan="3">
+                      <input type="time">
+                      <span> ~ </span>
+                      <input type="time">
+                      <input type="checkbox" id="week">
+                      <span>월</span>
+                      <input type="checkbox" id="week">
+                      <span>화</span>
+                      <input type="checkbox" id="week">
+                      <span>수</span>
+                      <input type="checkbox" id="week">
+                      <span>목</span>
+                      <input type="checkbox" id="week">
+                      <span>금</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>평가방식</td>
+                    <td colspan="3">
+                      <input type="text" placeholder="출석 10%, 과제 30%, 시험 60%">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>교재</td>
+                    <td colspan="3">
+                      <input type="text" placeholder="출판사-도서명-저자 입력">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>강의실</td>
+                    <td>
+                      <input type="text" placeholder="인문관 301호">
+                    </td>
+                    <td>최대 수강인원</td>
+                    <td>
+                      <input type="text">
+                    </td>
+                  </tr>
+                </table>
+                <button class="btn_register">등록</button>
+              </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer" curse>
+        <div>
+            <p>Copyrightⓒ Green University All rights reserved. ADMINISTRATOR Version 1.4.1</p>
+        </div>
+    </footer>
+</body>
+
+</html>

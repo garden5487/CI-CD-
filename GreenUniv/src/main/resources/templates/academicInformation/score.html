@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <link rel="stylesheet" href="/css/bachelor's_degree/score.css">
+    <link rel="stylesheet" href="/css/common/nav.css">
+    
+    <title>성적</title>
+</head>
+<body>
+    <th:block th:include="/common/html/header.html"/>
+    <nav>
+        <div>
+          <div>
+            <a href="#">
+              <img src="/images/ico-home.png" alt="홈페이지" />
+              &ensp;&ensp;
+            </a>
+            <a href="">&ensp;&ensp;학사안내&ensp;&ensp;</a>
+            <a href="">&ensp;&ensp;성적</a>
+          </div>
+        </div>
+      </nav>
+
+    <main id="container">
+        <section class="left_section">
+            <aside id="side-menu">
+              <div class="title-area">
+                <h1>학사안내</h1>
+              </div>
+                <a th:href="@{/academicInformation/notice}" class="menu">공지사항</a>
+                <a th:href="@{/academicInformation/schedule}" class="menu">학사일정</a>
+                <a th:href="@{/academicInformation/registration}" class="menu">수강신청</a>
+                <a th:href="@{/academicInformation/score}" class="menu">성적</a>
+                <a th:href="@{/academicInformation/graduation}" class="menu">수료 및 졸업</a>
+                <a th:href="@{/academicInformation/qna}" class="menu">자주묻는질문</a>
+            </aside>
+        </section>
+
+        <section class="right_section">
+           <article>
+            <div>
+                <h3>성적</h3>
+            </div>
+
+            <div>
+                <h5><img src="/images/bullet-h4.png" alt="#">시험</h5>
+                <h6>- 시험은 정기시험, 비정기시험, 추가시험, 재시험 등으로 구분</h6>
+                <p>
+                    1)정기시험 : 중간시험과 학기말시험으로 나누며 중간시험은 학기 당 수업일수 2분의 1이 되는 주에 실시하고, 학기말시험은 학기의 최종 주에 실시 <br>
+                    2)비정기시험 : 과제학습, 세미나 등 계속적인 학습활동을 평가하는 시험으로 담당교수의 책임 하에 실시<br>
+                    3)추가시험 : 질병 또는 부득이한 사정으로 정기시험에 응시할 수 없는 학생은 사유와 증빙서류를 첨부하여 추가시험신청서를 제출
+                </p>
+            </div>
+
+            <div>
+                <h6>- 시험 부정행위자의 처리</h6>
+                <p>
+                    1)시험 중 부정행위가 적발되면 감독교수는 그 행위내용을 시험지 상단에 기록하고 날인한 후 즉시 총장에게 보고<br>
+                    2)시험 부정행위자에 대하여는 다음의 내용에 따라 제적 또는 유기정학 처분<br>
+                    └ 시험에 대리로 응시하거나 대리응시를 부탁한 경우<br>
+                    └ 시험지에 다른 사람의 이름을 쓰거나 쓰게 한 경우<br>
+                    └ 부정행위자로 적발되어 징계처분을 받은 사실이 있는 학생이 거듭 부정행위를 한 경우
+                </p>
+            </div>
+
+            <div>
+                <h5><img src="/images/bullet-h4.png" alt="#">성적</h5>
+                <h6>- 평가내용</h6>
+                <p>
+                    1)성적평가는 각 교과목의 시험성적, 과제평가, 출석상황 및 학습태도 등을 종합하여 평가<br>
+                    2)출석 및 학습태도 10-20%, 정기시험 50-70%, 비정기시험 및 과제 20-30%로 함을 원칙
+                </p>
+            </div>
+
+            <div>
+                <h6>-등급</h6>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>등급</th>
+                            <th>평점</th>
+                            <th>백분위 기준점수</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>A+</th>
+                            <th>4.5</th>
+                            <th>99</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>A</th>
+                            <th>4</th>
+                            <th>94</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>B+</th>
+                            <th>3.5</th>
+                            <th>89</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>B</th>
+                            <th>3</th>
+                            <th>84</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>C+</th>
+                            <th>2.5</th>
+                            <th>79</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <th>2</th>
+                            <th>74</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>D+</th>
+                            <th>1.5</th>
+                            <th>69</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>D</th>
+                            <th>1</th>
+                            <th>64</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>F</th>
+                            <th>0</th>
+                            <th>59</th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>※ 이수한 교과목의 성적이 D0급 이상 또는 P일 경우는 학점을 취득한 것으로 인정</p>
+            </div>
+           </article>
+        </section>    
+    </main>
+    <th:block th:include="/common/html/footer.html"/>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenuniv.greenuniv.dao.mapper.StudentMapper">
+  <resultMap id="studentBasicInfoMap" type="com.greenuniv.greenuniv.dto.student.StudentDTO"
+    autoMapping="true">
+    <id property="studentNumber" column="student_number"/>
+    <result property="grade" column="student_grade"/>
+    <result property="semester" column="student_semester"/>
+    <result property="currentCredit" column="current_credit"/>
+    <result property="graduationCredit" column="graduation_credit"/>
+    <result property="status" column="student_status"/>
+
+    <association property="user" javaType="com.greenuniv.greenuniv.dto.user.UserDTO">
+      <result property="name" column="user_name"/>
+      <result property="socialNumber" column="social_number"/>
+      <result property="contact" column="user_contact"/>
+      <result property="email" column="user_email"/>
+    </association>
+    <association property="department"
+      javaType="com.greenuniv.greenuniv.dto.department.DepartmentDTO">
+      <result property="name" column="department_name"/>
+    </association>
+    <association property="image" javaType="com.greenuniv.greenuniv.dto.image.ImageDTO">
+      <result property="location" column="image_location"/>
+    </association>
+  </resultMap>
+  <select id="selectById" resultMap="studentBasicInfoMap">
+    SELECT
+    `img`.location AS `image_location`,
+    st.student_number AS `student_number`,
+    `dept`.`name` AS `department_name`,
+    `user`.`name` AS `user_name`,
+    `user`.social_number AS `social_number`,
+    `user`.contact AS `user_contact`,
+    `user`.email AS `user_email`,
+    `st`.grade AS `student_grade`,
+    `st`.semester AS `student_semester`,
+    `st`.current_credit AS `current_credit`,
+    `st`.graduation_credit AS `graduation_credit`,
+    `st`.`status` as `student_status`
+    FROM `student` AS `st`
+    JOIN `user`
+    ON `st`.user_id = `user`.id
+    JOIN `department` AS `dept`
+    ON `st`.department_id = dept.id
+    LEFT JOIN `image` AS `img`
+    ON (`st`.image_id IS NOT NULL AND `st`.image_id = `img`.id)
+    WHERE student_number = #{id};
+  </select>
+
+  <select id="selectAll" resultMap="studentBasicInfoMap">
+    SELECT * FROM `Student`;
+  </select>
+</mapper>

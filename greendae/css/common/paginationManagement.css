@@ -1,0 +1,65 @@
+
+.table_footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.table_footer button {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #dedede;
+  box-sizing: border-box;
+  background-color: white;
+  cursor: pointer;
+}
+
+.table_footer a {
+  display: inline-block;
+  width: 100%;  
+  height: 100%;
+  line-height: 35px;
+  color: #888;
+  font-weight: bold;
+}
+
+.pagination > button:hover {
+  background-color: #1A528E;
+  color: white;
+  border: 1px solid #1A528E;
+}
+
+.pagination > button > a:hover {
+  color: white;
+}
+
+.pagination > .prev {
+  margin-right: 20px;
+}
+
+.pagination > .next {
+  margin-left: 15px;
+}
+
+
+
+.btn_register > button{
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 33px;
+  border: 1px solid #08305a;
+  background-color: #1A528E;
+  
+}
+
+.btn_register > button > a{
+  color: #ffffff;
+  font-weight: 350;
+  font-size: 13px;
+}
+

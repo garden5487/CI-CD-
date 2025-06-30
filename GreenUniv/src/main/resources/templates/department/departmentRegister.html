@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/management/Department.css">
+    <link rel="stylesheet" href="/css/common/pagination.css" />
+    <link rel="stylesheet" href="/css/common/header.css" />
+    <link rel="stylesheet" href="/css/common/footer.css" />
+</head>
+<body>
+<th:block th:include="/common/html/management/header.html"/>
+    <main id="container">
+        <div>
+            <th:block th:include="/common/html/management/aside.html"/>
+            <section>
+                <div class="title-area">
+                    <h1>대학 및 학과 운영</h1>
+                    <h2>대학 및 학과&ensp;&ensp;<span>>&ensp;&ensp;대학 및 학과 등록</span></h2>
+                </div>
+                <div class="main-top">
+                
+                    <div class="main-title"><img src="/images/bullet-h4.png">&ensp;대학 정보 입력</div>
+                            <table class="menu_1" border="1">
+                                <tr>
+                                    <td>대학명</td>
+                                    <td><input type="text" placeholder="예) 인문사회대학"></td>
+                                </tr>
+                                <tr>
+                                    <td>대학 영문명</td>
+                                    <td><input type="text" placeholder="예) Humanities And Social Sciences"></td>
+                                </tr>
+                                <tr>
+                                    <td>대학 소개</td>
+                                    <td>
+                                        <input type="text" placeholder="대학 소개 제목입력" style="resize: none; width: 400px; margin-bottom: 5px;" ><br>
+                                        <textarea placeholder="대학 소개 내용입력" style="resize: none; width: 400px; height: 150px;"></textarea><br>
+                                        <input type="file"><br>
+                                        <span style="color: red;">대학·대학원 소개 페이지 출력 이미지(320 x 240) 첨부</span>
+                                    </td>
+                                </tr>
+                            </table>
+                           <div class="main-button"><input type="submit" class="search-btn search-input" value="등록"/></div>
+                        </div>
+                     <div class="main-bottom">
+                        <div class="main-title"><img src="/images/bullet-h4.png">&ensp;학과 정보 입력</div>
+                            <table class="menu_2" border="1">
+                                <tr>
+                                    <td>학과번호</td>
+                                    <td style="color: red;">고유 2자리 숫자 자동생성</td>
+                                    <td>단과대학</td>
+                                    <td>
+                                        <select class="input">
+                                            <option>선택</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>학과명</td>
+                                    <td><input type="text" placeholder="학과명 입력"></td>
+                                    <td>영문명</td>
+                                    <td><input type="text" placeholder="학과 공식 영문 이름"></td>
+                                </tr>
+                                <tr>
+                                    <td>설립연도</td>
+                                    <td><input type="date"></td>
+                                    <td>학과장</td>
+                                    <td>
+                                        <select class="input">
+                                            <option>선택</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>학과 연락처</td>
+                                    <td><input type="text" placeholder="학과 연락처 입력"></td>
+                                    <td>학과 사무실</td>
+                                    <td><input type="text" value="인문관 3층 306호"></td>
+                                </tr>
+                            </table>
+                          <div class="main-button"><input type="submit" class="search-btn search-input" value="등록"/></div>
+                        </div>
+                    </div>
+            </section>
+         </div>
+    </main>
+<th:block th:include="/common/html/management/footer.html"/>
+</body>
+
+</html>

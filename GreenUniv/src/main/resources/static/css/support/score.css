@@ -1,0 +1,78 @@
+#container table tr td:nth-child(2) {
+  text-align: center;
+}
+
+#container table tr td .detail-btn {
+  width: 60px;
+  height: 30px;
+  border: none;
+  background-color: #082e71;
+  color: white;
+  cursor: pointer;
+}
+
+#dialog {
+  padding: 30px 0;
+}
+
+.subtitle-area {
+  width: 600px;
+  height: auto;
+  padding: 10px 0;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.subtitle-area img {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.subtitle-area > h1 {
+  display: inline-block;
+  color: #145074;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#dialog table {
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-top: 2px solid #111;
+  margin-bottom: 60px;
+}
+
+#dialog table tr {
+  border-bottom: 1px solid #dedede;
+}
+
+#dialog table tr:nth-child(2) {
+  border-top: 2px solid #111;
+}
+
+#dialog table td,
+#dialog table th {
+  border-left: 1px solid #dedede;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+#dialog table th {
+  font-weight: bold;
+  border-right: 1px solid #dedede;
+}
+
+#dialog table tr th {
+  background-color: #f3f8fc;
+}
+
+#dialog .score-detail tr td {
+  border: 1px solid #dedede;
+  border-left: 1px solid #dedede;
+}
+
+#dialog #profile {
+  border-left: none;
+}

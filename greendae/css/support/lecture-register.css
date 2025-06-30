@@ -1,0 +1,12 @@
+#container table tr td:nth-child(2) {
+  text-align: center;
+}
+
+#container table tr td .register-btn {
+  width: 35px;
+  height: 30px;
+  border: none;
+  background-color: #082e71;
+  color: white;
+  cursor: pointer;
+}

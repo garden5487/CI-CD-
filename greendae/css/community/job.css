@@ -1,0 +1,19 @@
+#container table td > .category-recruit {
+  width: 45px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #20a0b7;
+}
+
+#container table td > .category-expired {
+  background-color: #9b9a9a;
+}
+
+#container table td:nth-child(2) {
+  text-align: center;
+}
+
+#container table td:nth-child(3) {
+  text-align: left;
+}

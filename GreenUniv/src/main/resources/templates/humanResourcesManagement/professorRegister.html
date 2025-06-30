@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common/paginationManagement.css" />
+    <link rel="stylesheet" href="/css/common/header.css" />
+    <link rel="stylesheet" href="/css/common/footer.css" />
+    <link rel="stylesheet" href="/css/humanResourceManager/studentregister.css">
+    <title>교수등록</title>
+</head>
+<body>
+<th:block th:include="/common/html/management/header.html"/>
+    <main id="container">
+        <div>
+            <th:block th:include="/common/html/management/aside.html"/>
+            <section>
+                <div class="title-area">
+                    <h1>교수 등록</h1>
+                    <h2>인사관리&ensp;&ensp;<span>>&ensp;&ensp;학생등록</span></h2>
+                </div>
+                <p><img src="/images/bullet-h4.png" alt="#">기본정보 입력</p>
+                <div>
+                <table class="Enter_basic_information" border="1">
+                    <tr>
+                        <td rowspan="4">
+                            <img src="/images/icon-avatar.png" alt="#">
+                        </td>
+                        <td>학번</td>
+                        <td style="color: #bc2e13;">연도+학과 코드+순번 조합 자동생성</td>
+                        <td>주민등록번호</td>
+                        <td><input type="text" placeholder="  -포함 14자리 입력"></td>
+                    </tr>
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" placeholder="  교수 이름 입력"></td>
+                        <td>영문명</td>
+                        <td><input type="text" placeholder="  여권 등과 동일한 영문 이름"></td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td>
+                            <input type="radio" value="male" >남
+                            <input type="radio" value="female">여
+                        </td>
+                        <td>국적</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">선택</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>휴대폰</td>
+                        <td><input type="text" placeholder="  휴대폰 번호 입력"></td>
+                        <td>이메일</td>
+                        <td><input type="text" placeholder="  이메일 입력"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주소</td>
+                        <td colspan="3">
+                            <input type="text" placeholder="우편번호 선택" class="post_num">
+                            <br>
+                            <input type="text" placeholder="기본주소 선택">
+                            <br>
+                            <input type="text" placeholder="상세주소 입력">
+                        </td>
+                    </tr>
+                </table>
+                <p><img src="/images/bullet-h4.png" alt="#">학적정보 입력</p>
+                <div>
+                    <table border="1" class="Enter_academic_information2">
+                        <tr>
+                            <td>졸업대학</td>
+                            <td>
+                                <input type="text" placeholder=" 대학교 이름 입력">
+                            </td>
+                            <td>학문 분야(전공)</td>
+                            <td>
+                                <input type="text" placeholder=" 전공 입력">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>졸업일</td>
+                            <td>
+                               <input type="date">
+                            </td>
+                            <td>학위</td>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">박사</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>담당학과</td>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">인문사회대학</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">영어영문학과</option>
+                                </select>
+                            </td>
+                            <td>임용일</td>
+                            <td>
+                                <input type="date">
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="btn_register">등록</button>
+                </div>
+                </div>
+            </section>
+        </div>
+    </main>
+<th:block th:include="/common/html/management/footer.html"/>
+</body>
+</html>

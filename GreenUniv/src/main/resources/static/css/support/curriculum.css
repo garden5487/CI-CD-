@@ -1,0 +1,22 @@
+.subtitle-area {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  margin-top: 15px;
+}
+
+.subtitle-area img {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.subtitle-area > h1 {
+  display: inline-block;
+  color: #145074;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#container table tr td:nth-child(2) {
+  text-align: center;
+}

@@ -1,0 +1,142 @@
+#container {
+  width: 1200px;
+  min-height: 677px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#container > section {
+  float: left;
+  width: 930px;
+  height: auto;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+#container table {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+  border-collapse: collapse;
+  border-top: 2px solid #111;
+}
+
+#container table th {
+  padding: 20px 10px;
+  font-size: 14px;
+  font-weight: bolder;
+  background-color: #f3f8fc;
+}
+
+#container table td {
+  text-align: left;
+  padding: 10px;
+  font-size: 13px;
+}
+
+#container .fake-block {
+  border: none;
+  text-align: left;
+  font-size: 13px;
+  display: inline;
+  width: 100%;
+  outline: none;
+}
+
+#container table tr {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+#content-area {
+  width: 930px;
+  height: 400px;
+}
+
+#content-area .content {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  border-top: none;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#button-area {
+  margin-top: 20px;
+  float: right;
+}
+
+.btn {
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+  border: none;
+  color: white;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.publish-btn,
+.modify-btn {
+  background-color: #3f97f6;
+}
+
+.delete-btn {
+  background-color: #942626;
+}
+
+#file-upload-area {
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  padding: 10px;
+}
+
+#file-upload-area > input {
+  display: block;
+  margin-top: 10px;
+}
+
+.comment-author {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.comment-date {
+  font-size: 12px;
+  font-weight: bold;
+  color: #888;
+}
+
+#file-upload-area > input {
+  display: block;
+  margin-top: 10px;
+}
+
+#comment-area .comment-editor {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#comment-area .comment-btn {
+  display: block;
+  float: right;
+  margin-left: 10px;
+}
+
+#editor-area .comment-view {
+  height: auto;
+  border: none;
+}
+

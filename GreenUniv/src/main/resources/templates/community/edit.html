@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>수정 - [[${article.getTitle()}]]</title>
+  <link rel="stylesheet" href="/css/common/header.css"/>
+  <link rel="stylesheet" href="/css/common/nav.css"/>
+  <link rel="stylesheet" href="/css/common/side-menu.css"/>
+  <link rel="stylesheet" href="/css/common/footer.css"/>
+  <link rel="stylesheet" href="/css/community/view.css"/>
+</head>
+<body>
+<div id="wrapper">
+  <th:block th:include="/common/html/header.html"/>
+  <main id="container">
+    <aside id="side-menu">
+      <div class="title-area">
+        <h1>커뮤니티</h1>
+      </div>
+      <a th:href="@{/article(category=notice)}" class="menu">공지사항</a>
+      <a th:href="@{/article(category=news)}" class="menu">뉴스 및 칼럼</a>
+      <a th:href="@{/article(category=employment)}" class="menu">취업정보</a>
+      <a th:href="@{/article(category=bulletin)}" class="menu">자유게시판</a>
+      <a th:href="@{/article/qna}" class="menu">질문과답변</a>
+      <a th:href="@{/article(category=resources)}" class="menu">자료실</a>
+    </aside>
+    <section>
+      <span class="category" th:text="${article.getCategory()}" style="display:none"></span>
+      <form th:action="@{/article/modify(category=${article.getCategory()})}" method="post">
+        <table>
+          <tbody>
+          <tr>
+            <th>글번호</th>
+            <td>
+              <input name="id" class="fake-block" type="text" th:value="${article.getId()}"/>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              제목
+            </th>
+            <td>
+              <input name="title" class="title fake-block"
+                     type="text"
+                     th:value="${article.getTitle()}"/>
+            </td>
+            <td class="view">
+              <input style="display: none" name="view" readonly class="fake-block" type="text"
+                     th:value="${article.getView()}"/>
+            </td>
+          </tr>
+          <tr>
+            <th>작성자</th>
+            <td class="author">
+              <input name="author" readonly class="fake-block" type="text"
+                     th:value="${article.getUser().getName()}"/>
+            </td>
+            <th>작성일</th>
+            <td class="register-date">
+              <input name="registerDate" readonly class="fake-block" type="text"
+                     th:value="${article.getRegisterDate()}"/>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div id="content-area">
+        <textarea class="content" name="content"
+                  th:readonly="${currentUser == null || !currentUser.getUsername().equals(article.getUser().getId())}">[[${article.getContent()}]]</textarea>
+        </div>
+        <div id="button-area"
+             th:if="${currentUser != null && currentUser.getUsername().equals(article.getUser().getId())}">
+          <input type="submit" value="수정" class="btn modify-btn"/>
+          <a type="submit" th:href="@{/article/view(id=${article.getId()})}" th:text="취소"
+             class="btn delete-btn"></a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <th:block th:include="/common/html/footer.html"/>
+</div>
+</body>
+</html>
